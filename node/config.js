@@ -11,12 +11,12 @@ const packages = async () => {
 };
 
 const commander = new Command();
-
+const PORT = process.env.PORT || 3333;
 commander
   .version(packages.version ? packages.version : Math.floor(Math.random() * 200), '-v, --version')
   .usage('[OPTIONS]...')
   .option('-sk, --secretKey <value>', 'Define secret key to genereta access token', 'ABCDEFGHIJKLMNOPQRSTUVWXYZ')
-  .option('-p, --port <number>', 'Define listing port', 3333)
+  .option('-p, --port <number>', 'Define listing port', PORT)
   .option('-an, --applicationName <value>', 'Define application name', 'WhatsApp.Bot')
   .option('-ll, --logLevel <value>', 'Define log level', 'debug')
   .option('-lp, --logPretty <value>', 'Define log pretty print', true)
